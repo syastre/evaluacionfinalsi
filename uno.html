@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+  <head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+<title>Les alternatives</title>
+<link rel="icon" type="image/png" sizes="16x16" href="img/confused.png">
+<!-- Search Engine -->
+<meta name="description" content="Visualización de datos respecto a las horas de sueño, tiempos de viaje y frecuencia con la que come comida saludable cada uno de los miembros de este MUY DIVERSO Y FABULOSO grupo">
+<!-- Schema.org for Google -->
+<meta itemprop="name" content="Les alternatives">
+<meta itemprop="description" content="Visualización de datos respecto a las horas de sueño, tiempos de viaje y frecuencia con la que come comida saludable cada uno de los miembros de este MUY DIVERSO Y FABULOSO grupo">
+<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+<meta name="og:title" content="Les alternatives">
+<meta name="og:description" content="Visualización de datos respecto a las horas de sueño, tiempos de viaje y frecuencia con la que come comida saludable cada uno de los miembros de este MUY DIVERSO Y FABULOSO grupo">
+<meta name="og:site_name" content="Les alternatives">
+<meta name="og:type" content="website">
+    <title>LES ALTERNATIVES</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+  <div class="collapse bg-secondary" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-dark">Grupo C:</h4>
+          <p class="text-white">A la cabeza de este grupo está Sofi Yastremiz, y nuestras visualizaciones tratan sobre la calidad de vida de cada uno de les integrantes del grupo. Lo completan Fernando Catalán, Cristina Grandón, Julio Lara y Benjamín Vidal. Intentaremos mostrarles un poco de cómo dormimos, comemos y viajamos.</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Visualizaciones:</h4>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">HORAS</a></li>
+            <li><a href="#" class="text-white">COMIDA</a></li>
+            <li><a href="#" class="text-white">TIEMPO</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="navbar navbar-dark bg-info shadow-sm">
+    <div class="container d-flex justify-content-between">
+      <a href="index.html" class="navbar-brand d-flex align-items-center">
+        <strong>LES ALTERNATIVES</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+<main role="main">
+  <div class="py-3 bg-light">
+    <div class="container pb-3">
+      <div class="row pb-3">
+        <div class="col-sm-10 pt-2 pb-2">
+          <a href="index.html"><h1> HORAS DE SUEÑO </h1></a>
+        </div>
+        <div class="col-sm-12 p-0 mb-2" id="vis">
+          <!--acá estoy metiendo el canvas con p5.js-->
+        </div>
+        <div class="col-sm-8">
+          <h3 class="border-bottom py-2">¿Cuánto se duerme en la FAU?</h3>
+          <p>Esta visualización contiene las horas de sueño en el transcurso de 5 días hábiles (desde la noche del domingo, hasta la mañana del viernes) de cinco estudiantes de la facultad. Debido a la alta carga académica, podemos ver que muchos estudiantes estan lejos de cumplir las 8 horas de sueño diarias necesarias para una vida sana.</p>
+        </div>
+      </div><!--acá cierro el row-->
+    </div><!--acá cierro el container-->
+</div><!--py-5 bg-light-->
+</main>
+
+<footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+      <a href="#">&uarr; Subir</a>
+    </p>
+    <p>Favor cambien este texto por algo que haga sentido.</p>
+  </div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+
+<script>
+  var cont = 0;
+      var w, h;
+
+      function preload() {
+        let losDatos = 'https://api.myjson.com/bins/ni5wf'
+        data = loadJSON(losDatos);
+        console.log(data);
+    }
+
+
+
+      function setup(){
+        var w = document.getElementById('vis').offsetWidth;
+        var h = w/2;
+        createCanvas(w,h).parent("vis");
+        background(255);
+        fill(100, 100, 100);
+        for (var z = 0; z < 5; z++) {
+          text(data[z].nombre, (z*200)+ 150, 100)
+          for (var x = 0; x < 5; x++) {
+            console.log(data[z].sueño[x]);
+            rect(150+(x*200)+(cont), 120, 10, data[z].sueño[x]*30);
+            cont+=2;
+          
+          
+        }
+      
+      
+        }
+      
+
+      }
+      
+
+    </script>
+
+</html>

@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i&display=swap&subset=latin-ext');
+
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+header{
+	font-family: 'Raleway';
+	font-weight: 400;
+}
+
+body{
+	font-family: 'Raleway';
+	font-weight: 400;
+}
+
+h1,h2,h3,h4,h5,h6,strong{
+	font-family: 'Josefin Sans';
+	font-weight: 700;    
+}
+    
+.jumbotron {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-bottom: 0;
+  background-color: #E0F2F7;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 700;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+@media (min-width: 1200px) { .card-columns { column-count: 4; }}
+
+@media (max-width: 768px) { .card-columns { column-count: 1; }}
+
+#grupal{
+  margin:0 1rem;
+}
+
+.card{
+  border:info;
+  border-radius: 5;
+  background:#00C6C630;
+}
+
+.card-img-top{
+  border-radius: 0;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+.img-fluid{filter: grayscale(1);
+    transition: all ease 1s;
+}
+.col-lg-6:hover img{filter: grayscale(0);
+    }
